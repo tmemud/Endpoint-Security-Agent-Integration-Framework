@@ -1,0 +1,20 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endpoint List</title>
+</head>
+<body>
+    <h1>Endpoint List</h1>
+    <ul>
+        {% for endpoint in endpoints %}
+        <li>
+            <a href="/endpoint/{{ endpoint.id }}">{{ endpoint.hostname }} - {{ endpoint.status }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
