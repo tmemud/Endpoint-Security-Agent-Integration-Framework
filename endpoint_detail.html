@@ -1,0 +1,25 @@
+<!-- endpoint_detail.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endpoint Detail</title>
+</head>
+<body>
+    <h1>Endpoint Detail</h1>
+    <p>Hostname: {{ endpoint.hostname }}</p>
+    <p>Status: {{ endpoint.status }}</p>
+    <h2>Management Actions</h2>
+    <form action="/manage" method="post">
+        <input type="hidden" name="endpoint_id" value="{{ endpoint.id }}">
+        <select name="action">
+            <option value="deploy_agent">Deploy Security Agent</option>
+            <option value="update_policy">Update Security Policy</option>
+            <option value="scan">Scan for Threats</option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
